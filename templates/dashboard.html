@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiniSiteAI - Dashboard</title>
+  <link rel="stylesheet" href="/static/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <i class="fas fa-robot"></i>
+          <span class="logo-text">MiniSite<span class="logo-highlight">AI</span></span>
+        </div>
+        <button class="sidebar-toggle" id="sidebarToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      
+      
+      
+      <nav class="sidebar-nav">
+        <ul>
+          <li>
+            <a href="#dashboard" class="nav-item active" data-section="dashboard">
+              <i class="fas fa-home"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="#ai-portfolio" class="nav-item" data-section="ai-portfolio">
+              <i class="fas fa-magic"></i>
+              <span>Create Portfolio</span>
+            </a>
+          </li>
+       
+          <li>
+            <a href="#templates" class="nav-item" data-section="templates">
+              <i class="fas fa-palette"></i>
+              <span>Templates</span>
+            </a>
+          </li>
+          <li>
+            <a href="#support" class="nav-item" data-section="support">
+              <i class="fas fa-question-circle"></i>
+              <span>Support</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="sidebar-footer">
+
+  <!-- Social Icons -->
+  <div class="sidebar-socials">
+    <i class="fab fa-linkedin"
+       title="LinkedIn"
+       onclick="window.open('https://www.linkedin.com/in/richa-kumari-6a3875299/', '_blank')"></i>
+
+    <i class="fab fa-instagram"
+       title="Instagram"
+       onclick="window.open('https://www.instagram.com/_rishuchoudhary/', '_blank')"></i>
+
+    <i class="fab fa-github"
+       title="GitHub"
+       onclick="window.open('https://github.com/rich-aChoudhary', '_blank')"></i>
+  </div>
+
+  <button class="btn-logout" id="logoutBtn">
+    <i class="fas fa-sign-out-alt"></i>
+    <span>Logout</span>
+  </button>
+
+  <div class="app-version">v1.0.0</div>
+</div>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Header -->
+      <header class="main-header">
+        <div class="header-left">
+          <h1 id="pageTitle">Dashboard</h1>
+        </div>
+        
+        <div class="header-right">
+          <div class="header-user">
+            <div class="user-avatar-small" id="userAvatarSmall">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="user-dropdown">
+              <span id="userNameSmall">User Name</span>
+            
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <div class="content-wrapper">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="content-section active">
+          <div class="welcome-banner">
+            <div class="welcome-text">
+              <h3>Welcome back, <span id="welcomeUserName">User</span>! 👋</h3>
+              <p>Here's your portfolio dashboard. Create, manage, and track your AI-generated portfolios.</p>
+            </div>
+            <div class="welcome-stats">
+              <div class="stat-card">
+                <i class="fas fa-file-alt"></i>
+                <div>
+                  <h3 id="portfolioCount">0</h3>
+                  <p>Portfolios</p>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+          
+          <div class="quick-actions">
+            <!-- <h3 class="section-title">Quick Actions</h3> -->
+            <div class="actions-grid">
+              <div class="action-card" data-action="create-portfolio">
+                <div class="action-icon">
+                  <i class="fas fa-plus-circle"></i>
+                </div>
+                <h4>Create New Portfolio</h4>
+                <p>Generate a professional portfolio with AI</p>
+              </div>
+              <div class="action-card" data-action="view-templates">
+                <div class="action-icon">
+                  <i class="fas fa-palette"></i>
+                </div>
+                <h4>Browse Templates</h4>
+                <p>Choose from 20+ professional designs</p>
+              </div>
+              <div class="action-card" data-action="view-analytics">
+                <div class="action-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <h4>View Analytics</h4>
+                <p>Track portfolio performance</p>
+              </div>
+              <div class="action-card" data-action="get-support">
+                <div class="action-icon">
+                  <i class="fas fa-question-circle"></i>
+                </div>
+                <h4>Get Help</h4>
+                <p>Contact support or view guides</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="recent-portfolios">
+  <div class="section-header">
+    <h3 class="section-title">Recent Portfolios</h3>
+  </div>
+  
+  <div class="portfolios-container">
+    <div class="empty-state" id="emptyPortfolioState">
+      <i class="fas fa-folder-open"></i>
+      <p>No portfolios yet. Create your first one!</p>
+      <button class="btn-primary" id="createFirstPortfolio">Create Portfolio</button>
+    </div>
+    
+    <!-- Portfolio Table (hidden by default) -->
+    <div class="portfolio-table-wrapper" id="portfolioTableWrapper" style="display: none;">
+      <table class="portfolio-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Created Date</th>
+            <th class="actions-header">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="recentPortfolios">
+          <!-- Portfolio rows will be inserted here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+        </section>
+
+         <div id="ai-portfolio" class="content-section">
+          <!-- AI Portfolio Form -->
+          <section style="margin-bottom: 40px;">
+            <h2 style="color: #4f46e5; font-size: 1.5rem; margin-bottom: 10px;">Create Your AI Portfolio</h2>
+            <p style="margin-bottom: 20px; color: #444;">Enter the required information below. Our AI will generate your professional portfolio instantly.</p>
+
+            <div style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);">
+              <label for="title" style="display: block; margin-bottom: 8px; font-weight: 600;">Portfolio Title</label>
+              <input id="title" type="text" placeholder="e.g. Full Stack Developer" style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ccc;" />
+
+              <label for="description" style="display: block; margin-bottom: 8px; font-weight: 600;">Short Bio / Description</label>
+              <textarea id="description" rows="5" placeholder="Tell us a bit about your skills, experience, and goals..." style="width: 100%; padding: 12px; margin-bottom: 12px; border-radius: 8px; border: 1px solid #ccc;"></textarea>
+
+              <div style="margin-bottom: 20px;">
+                <label for="resumeUpload" style="display: block; margin-bottom: 8px; font-weight: 600;">Upload Resume (Optional)</label>
+                <input type="file" id="resumeUpload" accept=".pdf,.doc,.docx" style="width: 100%; padding: 8px; border-radius: 8px; border: 1px solid #ccc;" />
+                <div style="margin-top: 8px; color: #666; font-size: 0.9rem;">Accepted: PDF, DOC, DOCX. Max size: 5MB.</div>
+              </div>
+
+              <button id="generatePortfolio" style="padding: 12px 24px; background-color: #4f46e5; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">Generate Portfolio</button>
+            </div>
+          </section>
+
+          <!-- AI Response Output -->
+          <section id="ai-output" class="hidden mt-8">
+            <h3 class="text-indigo-600 text-xl font-semibold mb-3">Your AI-Generated Portfolio</h3>
+            <div id="portfolio-preview" class="bg-gray-50 p-5 rounded-lg border border-gray-200"></div>
+            <div id="portfolio-editor-section" class="hidden">
+              <div id="portfolio-editable" contenteditable="true" class="bg-white border border-gray-300 p-5 rounded-lg min-h-[300px] mt-5">
+                
+              </div>
+              <div class="mt-5 flex items-center">
+                <label for="imageUpload" class="mr-3 text-gray-700">Upload Image:</label>
+                <input type="file" id="imageUpload" accept="image/*" class="border-gray-300 rounded">
+                <button id="savePortfolio" class="ml-5 p-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">Save Changes</button>
+                <button id="cancelEdit" class="ml-3 p-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600">Cancel</button>
+              </div>
+            </div>
+            <button id="editPortfolioBtn" class="mt-5 p-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700">✏️ Edit Portfolio</button>
+          </section>
+
+        </div>
+
+        <!-- Profile Section -->
+        <section id="profile" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Profile Settings</h2>
+            <p class="section-subtitle">Manage your account and personal information</p>
+          </div>
+          
+          <div class="profile-content">
+            <div class="profile-card">
+              <div class="profile-header">
+                <div class="profile-avatar-large" id="profileAvatarLarge">
+                  <i class="fas fa-user"></i>
+                  <button class="avatar-upload" id="avatarUploadBtn">
+                    <i class="fas fa-camera"></i>
+                  </button>
+                </div>
+                <div class="profile-info">
+                  <h3 id="profileUserName">John Doe</h3>
+                  <p id="profileUserEmail">john@example.com</p>
+                  <p class="member-since">Member since: <span id="memberSince">Jan 2024</span></p>
+                </div>
+              </div>
+              
+              <form id="profileForm">
+                <div class="form-section">
+                  <h4>Personal Information</h4>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="profileFullName">Full Name *</label>
+                      <input type="text" id="profileFullName" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="profileEmail">Email Address *</label>
+                      <input type="email" id="profileEmail" required>
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="profilePhone">Phone Number</label>
+                      <input type="tel" id="profilePhone">
+                    </div>
+                    <div class="form-group">
+                      <label for="profileLocation">Location</label>
+                      <input type="text" id="profileLocation" placeholder="City, Country">
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="form-section">
+                  <h4>Professional Information</h4>
+                  <div class="form-group">
+                    <label for="profileJobTitle">Job Title</label>
+                    <input type="text" id="profileJobTitle" placeholder="e.g. Software Engineer">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="profileCompany">Company / Organization</label>
+                    <input type="text" id="profileCompany">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="profileWebsite">Website / LinkedIn</label>
+                    <input type="url" id="profileWebsite" placeholder="https://">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="profileBio">Professional Bio</label>
+                    <textarea id="profileBio" rows="4" placeholder="Tell us about your professional background..."></textarea>
+                    <div class="char-count"><span id="profileBioCharCount">0</span>/500</div>
+                  </div>
+                </div>
+                
+                <div class="form-section">
+                  <h4>Account Settings</h4>
+                  <div class="form-group">
+                    <label for="profileUsername">Username</label>
+                    <input type="text" id="profileUsername">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="profileNotifications">
+                      <input type="checkbox" id="profileNotifications" checked>
+                      <span>Receive email notifications</span>
+                    </label>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="profileNewsletter">
+                      <input type="checkbox" id="profileNewsletter" checked>
+                      <span>Subscribe to newsletter</span>
+                    </label>
+                  </div>
+                </div>
+                
+                <div class="form-actions">
+                  <button type="submit" class="btn-primary">Save Changes</button>
+                  <button type="button" class="btn-secondary" id="cancelProfileChanges">Cancel</button>
+                </div>
+              </form>
+            </div>
+            
+            <div class="account-actions">
+              <div class="action-card danger">
+                <h4>Danger Zone</h4>
+                <p>Permanently delete your account and all data</p>
+                <button class="btn-danger" id="deleteAccountBtn">Delete Account</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Templates Section -->
+        <section id="templates" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Portfolio Templates</h2>
+            <p class="section-subtitle">Choose from our professionally designed templates</p>
+          </div>
+          
+          <div class="templates-filter">
+            <div class="filter-options">
+              <button class="filter-btn active" data-filter="all">All Templates</button>
+              <button class="filter-btn" data-filter="minimal">Minimal</button>
+              <button class="filter-btn" data-filter="creative">Creative</button>
+              <button class="filter-btn" data-filter="corporate">Corporate</button>
+              <button class="filter-btn" data-filter="developer">Developer</button>
+            </div>
+          </div>
+          
+          <div class="templates-grid-large" id="templatesContainer">
+            <!-- Templates will be loaded here -->
+          </div>
+          
+          <div class="template-preview-modal hidden" id="templatePreviewModal">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 id="modalTemplateName">Template Name</h3>
+                <button class="modal-close" id="modalCloseBtn">&times;</button>
+              </div>
+              <div class="modal-body">
+                <div class="template-modal-preview" id="modalTemplatePreview"></div>
+                <div class="template-modal-info">
+                  <h4>Template Features</h4>
+                  <ul id="modalTemplateFeatures">
+                    <li>Responsive design</li>
+                    <li>SEO optimized</li>
+                    <li>Easy customization</li>
+                  </ul>
+                  <div class="template-modal-actions">
+                    <button class="btn-primary" id="useTemplateBtn">Use This Template</button>
+                    <button class="btn-secondary" id="previewLiveBtn">Live Preview</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Support Section -->
+        <section id="support" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Get help and contact at : richakumari10022003@gmail.com</h2>
+          </div>
+          
+        </section>
+      </div>
+    </main>
+
+    <!-- Notification Panel -->
+    <div class="notification-panel hidden" id="notificationPanel">
+      <div class="notification-header">
+        <h3>Notifications</h3>
+        <button class="notification-close" id="notificationCloseBtn">&times;</button>
+      </div>
+      <div class="notification-list" id="notificationList">
+        <!-- Notifications will be loaded here -->
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/dashboard.js"></script>
+  <script src="/static/auth.js"></script>
+</body>
+</html>

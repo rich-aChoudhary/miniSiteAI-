@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniSiteAI - Professional Portfolio Platform</title>
+    <link rel="stylesheet" href="/static/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔐</text></svg>">
+</head>
+<body>
+    <div class="auth-container">
+        <!-- Left Panel - Branding & Info -->
+        <div class="brand-panel">
+            <div class="brand-content">
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                    <span class="logo-text">MiniSite<span class="logo-highlight">AI</span></span>
+                </div>
+                
+                <div class="brand-message">
+                    <h1>Welcome to MiniSiteAI</h1>
+ 
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <i class="fas fa-bolt"></i>
+                            <div>
+                                <h3>Instant Generation</h3>
+                                <p>Generate complete portfolios in under 5 minutes</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-palette"></i>
+                            <div>
+                                <h3>Beautiful Templates</h3>
+                                <p>20+ professionally designed portfolio templates</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-chart-line"></i>
+                            <div>
+                                <h3>Smart Analytics</h3>
+                                <p>Track views and engagement with built-in analytics</p>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            
+            </div>
+        </div>
+
+        <!-- Right Panel - Login Form -->
+        <div class="form-panel">
+            <div class="form-container">
+                <!-- Login Form -->
+                <div class="form-wrapper active" id="loginForm">
+                    <div class="form-header">
+                        <h2>Welcome Back</h2>
+                        <p>Sign in to your MiniSiteAI account to continue building your professional portfolio</p>
+                    </div>
+                    
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="login-email">Email Address</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="login-email" placeholder="you@example.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                           
+                            <div class="input-with-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="login-password" placeholder="Enter your password" required>
+                                <button type="button" class="password-toggle" id="togglePassword">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">
+                            <span>Sign In</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <div class="form-footer">
+                            <p>Don't have an account? <a href="#" id="switchToSignup">Sign up for free</a></p>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Signup Form -->
+                <div class="form-wrapper" id="signupForm">
+                    <div class="form-header">
+                        <h2>Create Your Account</h2>
+                        <p>Join 10+ professionals who've built their portfolios with MiniSiteAI</p>
+                    </div>
+                    
+                    <form id="signup-form">
+                        <div class="form-group">
+                            <label for="signup-name">Full Name</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="signup-name" placeholder="John Doe" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="signup-email">Email Address</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="signup-email" placeholder="you@example.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="signup-password">Create Password</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="signup-password" placeholder="At least 8 characters" required>
+                                <button type="button" class="password-toggle" id="toggleSignupPassword">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                          
+                        </div>
+                       
+                        
+                        <button type="submit" class="btn-primary">
+                            <span>Create Free Account</span>
+                            <i class="fas fa-rocket"></i>
+                        </button>
+                        
+                       
+                        
+                        <div class="form-footer">
+                            <p>Already have an account? <a href="#" id="switchToLoginFromSignup">Sign in</a></p>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Forgot Password Form -->
+                <div class="form-wrapper" id="forgotPasswordForm">
+                    <div class="form-header">
+                        <h2>Reset Password</h2>
+                        <p>Enter your email address and we'll send you instructions to reset your password</p>
+                    </div>
+                    
+                    <form id="forgot-password-form">
+                        <div class="form-group">
+                            <label for="reset-email">Email Address</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="reset-email" placeholder="you@example.com" required>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">
+                            <span>Send Reset Instructions</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        
+                        <div class="form-footer">
+                            <p><a href="#" id="backToLogin">← Back to Sign In</a></p>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Success Message -->
+                <div class="success-message hidden" id="successMessage">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Check Your Email!</h3>
+                    <p>We've sent password reset instructions to your email address.</p>
+                    <button class="btn-secondary" id="returnToLogin">Return to Login</button>
+                </div>
+            </div>
+            
+            <div class="form-notification" id="formNotification">
+                <i class="fas fa-info-circle"></i>
+                <span id="notificationMessage"></span>
+                <button class="notification-close" id="closeNotification">&times;</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="MiniSiteAI - Create stunning professional portfolios in seconds with AI. No coding required.">
+  <title>MiniSiteAI - Create Your Portfolio in Seconds</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@9.0.0/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <link rel="stylesheet" href="/static/home.css">
+  <link rel="icon" type="image/x-icon" >
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <i class="fas fa-robot logo-icon"></i>
+          <span class="logo-text">MiniSite<span class="logo-highlight">AI</span></span>
+        </div>
+        
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="#how" class="nav-link">How It Works</a></li>
+            <li><a href="#features" class="nav-link">Features</a></li>
+            <li><a href="#templates" class="nav-link">Templates</a></li>
+            <li><a href="#reviews" class="nav-link">Reviews</a></li>
+            <li><a href="#pricing" class="nav-link">Pricing</a></li>
+          </ul>
+        </nav>
+        
+        <div class="header-actions">
+          <button class="btn btn-login" id="loginButton">
+            <i class="fas fa-sign-in-alt"></i> Sign In
+          </button>
+          <button class="btn btn-primary btn-signup" id="signupButton">
+            Get Started Free
+          </button>
+        </div>
+        
+        <button class="menu-toggle" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content" >
+        <div class="hero-text">
+          <div class="badge">
+            <i class="fas fa-bolt"></i>
+            AI-Powered Portfolio Builder
+          </div>
+          <h1 class="hero-title">Create Stunning Portfolios <span class="highlight">Instantly</span> with AI</h1>
+          <p class="hero-description">Just enter a few details and let AI craft a professional portfolio that highlights your strengths, projects, and personality. No coding. No designing. Just results in seconds.</p>
+          
+          <div class="hero-actions">
+            <button class="btn btn-primary btn-lg" id="getStarted">
+              <i class="fas fa-magic"></i> Create Your Portfolio
+            </button>
+            <button class="btn btn-outline btn-lg" id="watchDemo">
+              <i class="fas fa-play-circle"></i> Watch Demo
+            </button>
+          </div>
+          
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-number">100+</span>
+              <span class="stat-label">Portfolios Created</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">4.7</span>
+              <span class="stat-label">User Rating</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">98%</span>
+              <span class="stat-label">Satisfaction Rate</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="hero-visual" 
+          <div class="portfolio-preview">
+            <div class="preview-header">
+              <span class="preview-url">richakumari10022003@gmail.com</span>
+            </div>
+            <div class="preview-content">
+              <div class="preview-profile">
+                <div class="preview-avatar">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div class="preview-info">
+                  <h4>Richa Kumari</h4>
+                  <p>Data Science</p>
+                </div>
+              </div>
+              <div class="preview-skills">
+                <span class="skill-tag">Data Analysis</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Statistics</span>
+                <span class="skill-tag">AI/ML</span>
+              </div>
+              <div class="preview-projects">
+                <div class="project">
+                  <h5>MiniSiteAI</h5>
+                  <p>Built with Python and AI </p>
+                </div>
+                <div class="project">
+                  <h5>Disease Generator</h5>
+                  <p>Machine Learning project</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section  id="how">
+    <div class="container">
+      <div class="section-header" >
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">MiniSiteAI simplifies your personal branding journey into 3 easy steps.</p>
+      </div>
+      
+      <div class="steps">
+        <div class="step" 
+          <div class="step-number">01</div>
+          <div class="step-icon">
+            <i class="fas fa-user-edit"></i>
+          </div>
+          <h3 class="step-title">Enter Your Details</h3>
+          <p class="step-description">Fill in a few fields like name, skills, education, and experiences. Takes less than 2 minutes.</p>
+        </div>
+        
+        <div class="step" >
+          <div class="step-number">02</div>
+          <div class="step-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <h3 class="step-title">Let AI Generate</h3>
+          <p class="step-description">Our AI engine instantly creates a complete portfolio — mobile-friendly, modern, and editable.</p>
+        </div>
+        
+        <div class="step" >
+          <div class="step-number">03</div>
+          <div class="step-icon">
+            <i class="fas fa-share-alt"></i>
+          </div>
+          <h3 class="step-title">Publish & Share</h3>
+          <p class="step-description">One-click publish to get your own shareable URL — perfect for resumes, LinkedIn, or job apps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-header" >
+        <h2 class="section-title">Why Choose MiniSiteAI?</h2>
+        <p class="section-subtitle">We're not just another portfolio builder. We're your AI-powered career launchpad.</p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card" >
+          <div class="feature-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3 class="feature-title">⚡ Instant Generation</h3>
+          <p class="feature-description">Create your entire portfolio in under 5 minutes with our AI engine.</p>
+        </div>
+        
+        <div class="feature-card" >
+          <div class="feature-icon">
+            <i class="fas fa-palette"></i>
+          </div>
+          <h3 class="feature-title">🎨 Beautiful Templates</h3>
+          <p class="feature-description">Choose from multiple modern designs suited for developers, designers, freelancers & more.</p>
+        </div>
+        
+        <div class="feature-card" >
+          <div class="feature-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h3 class="feature-title">🧠 AI-Powered Suggestions</h3>
+          <p class="feature-description">Don't know what to write? Let AI complete your experience & skills summary.</p>
+        </div>
+        
+        <div class="feature-card" >
+          <div class="feature-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3 class="feature-title">📱 Mobile Friendly</h3>
+          <p class="feature-description">Fully responsive design. Your portfolio looks great on any device.</p>
+        </div>
+        
+        <div class="feature-card" >
+          <div class="feature-icon">
+            <i class="fas fa-cloud-upload-alt"></i>
+          </div>
+          <h3 class="feature-title">☁️ Cloud Hosting</h3>
+          <p class="feature-description">No setup required. We host your portfolio with a custom URL.</p>
+        </div>
+        
+        <div class="feature-card" >
+          <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="feature-title">📊 Analytics Dashboard</h3>
+          <p class="feature-description">Track views, visitor locations, and popular sections of your portfolio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Templates Preview -->
+  <section class="section section-dark" id="templates">
+    <div class="container">
+      <div class="section-header" >
+        <h2 class="section-title">Professional Templates</h2>
+        <p class="section-subtitle">Choose from a variety of AI-designed templates for every profession.</p>
+      </div>
+      
+      <div class="templates-slider swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide template-slide">
+            <div class="template-card">
+              <div class="template-header">
+                <h4>Minimal Developer</h4>
+                <span class="template-badge">Most Popular</span>
+              </div>
+              <div class="template-preview dev-template"></div>
+              <p class="template-description">Clean, code-focused design perfect for developers and engineers.</p>
+            </div>
+          </div>
+          
+          <div class="swiper-slide template-slide">
+            <div class="template-card">
+              <div class="template-header">
+                <h4>Creative Designer</h4>
+                <span class="template-badge">Visual</span>
+              </div>
+              <div class="template-preview design-template"></div>
+              <p class="template-description">Showcase visuals, projects, and creative work with style.</p>
+            </div>
+          </div>
+          
+          <div class="swiper-slide template-slide">
+            <div class="template-card">
+              <div class="template-header">
+                <h4>Corporate Professional</h4>
+                <span class="template-badge">Business</span>
+              </div>
+              <div class="template-preview corporate-template"></div>
+              <p class="template-description">Elegant and professional layout for business and corporate roles.</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="section-header" >
+        <h2 class="section-title">What Our Users Say</h2>
+        <p class="section-subtitle">Real reviews from real people who launched their portfolios with MiniSiteAI</p>
+      </div>
+      
+      <div class="reviews-grid">
+        <div class="review-card" >
+          <div class="review-header">
+            <div class="reviewer">
+              <div class="reviewer-avatar">
+                <i class="fas fa-user-circle"></i>
+              </div>
+              <div class="reviewer-info">
+                <h4>Anjali Mehra</h4>
+                <p>Frontend Developer</p>
+              </div>
+            </div>
+            <div class="review-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <p class="review-text">"I never imagined creating a portfolio could be this easy. Got hired within 2 weeks after sharing mine! The AI suggestions were spot-on."</p>
+        </div>
+        
+        <div class="review-card"  >
+          <div class="review-header">
+            <div class="reviewer">
+              <div class="reviewer-avatar">
+                <i class="fas fa-user-circle"></i>
+              </div>
+              <div class="reviewer-info">
+                <h4>Farhan Ali</h4>
+                <p>UX Designer</p>
+              </div>
+            </div>
+            <div class="review-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+          <p class="review-text">"MiniSiteAI's templates are gorgeous. The AI suggestions were better than what I would write! It saved me hours of work."</p>
+        </div>
+        
+        <div class="review-card" >
+          <div class="review-header">
+            <div class="reviewer">
+              <div class="reviewer-avatar">
+                <i class="fas fa-user-circle"></i>
+              </div>
+              <div class="reviewer-info">
+                <h4>Sahil Jain</h4>
+                <p>Data Scientist</p>
+              </div>
+            </div>
+            <div class="review-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <p class="review-text">"Highly recommend for job seekers. Saved hours and gave me a professional digital identity instantly. Got 3 interviews in the first week!"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content" >
+        <h2 class="cta-title">Ready to Build Your Portfolio?</h2>
+        <p class="cta-description">Join 10+ users who've already built their personal brand with MiniSiteAI.</p>
+        <div class="cta-actions">
+          <button class="btn btn-primary btn-xl" id="getStartedBottom">
+            <i class="fas fa-magic"></i> Start Free - No Credit Card
+          </button>
+          <p class="cta-note">Free plan includes 2 portfolio with basic features</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="logo">
+            <i class="fas fa-robot logo-icon"></i>
+            <span class="logo-text">MiniSite<span class="logo-highlight">AI</span></span>
+          </div>
+          <p class="footer-description">AI-powered portfolio creation for professionals. Build, customize, and share your personal brand in minutes.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Product</h4>
+            <ul>
+              <li><a href="#">Features</a></li>
+              <li><a href="#">Templates</a></li>
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Use Cases</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Community</a></li>
+              <li><a href="#">Status</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+              <li><a href="#">GDPR</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 MiniSiteAI. All rights reserved.</p>
+        <p>Made with <i class="fas fa-heart heart-icon"></i> for professionals worldwide</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9.0.0/swiper-bundle.min.js"></script>
+  <script src="/static/script.js"></script>
+</body>
+</html>
